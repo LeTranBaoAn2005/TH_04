@@ -23,12 +23,15 @@
             var pattern = /^\d$/
             var num1 = (inputso1.value);
             var num2 = (inputso2.value);
-            var ketqua = num1 + num2;
+
             if (num1 == '' && num2 == '') {
                 hienthi.textContent = "Chua nhap so";
-            } else if (!pattern.test(num1) && !pattern.test(num2)) {
+            } else if (!pattern.test(num1) || !pattern.test(num2)) {
                 hienthi.textContent = "Ban nhap khong phai so";
-            } else hienthi.textContent = ketqua;
+            } else {
+                var ketqua = parseFloat(num1) + parseFloat(num2);
+                hienthi.textContent = ketqua;
+            }
         }
 
         but.onclick = sum;
