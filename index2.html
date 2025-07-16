@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lấy phần cuối tên</title>
 </head>
-<style>
-
-</style>
 
 <body>
-    <input id="name" placeholder="Hãy nhập" type="text">
+    <input id="name" placeholder="Nhập họ tên" type="text">
     <button id="but">Xác nhận</button> <br>
-    <span class="checknum" id="check"></span>
+    <span id="check"></span>
+
     <script>
         var inputname = document.getElementById('name');
         var check = document.getElementById('check');
         var but = document.getElementById('but');
 
         function callcheck() {
-            var value = inputname.value;
-            var lastname = value.slice(-2);
-            check.innerText = lastname;
+            var fullName = inputname.value.trim();
+            var nameParts = fullName.split(' ');
+            var lastName = nameParts[nameParts.length - 1];
+
+            check.innerText = lastName;
         }
 
         but.onclick = callcheck;
