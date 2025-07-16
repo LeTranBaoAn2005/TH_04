@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .check {
+        color: red;
+    }
+</style>
+
+<body>
+    <input id="name" type="text" placeholder="Hay nhap">
+    <button id="but">Xac nhan</button><br>
+    <span class="check" id="check"></span>
+
+    <script>
+        var inputname = document.getElementById('name');
+        var check = document.getElementById('check');
+        var but = document.getElementById('but');
+
+        function callcheck() {
+            var pattern = /\d/;
+            var value = inputname.value;
+            if (value == '') {
+                check.innerText = "Xin hay nhap";
+            } else if (pattern.test(value)) {
+                check.innerText = "Number";
+            } else
+                check.innerText = "Text";
+
+        }
+
+        but.onclick = callcheck;
+    </script>
+</body>
+
+</html>
